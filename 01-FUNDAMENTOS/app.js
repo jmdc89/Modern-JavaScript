@@ -11,13 +11,21 @@
 
 let a = 10, 
     b = 20, 
-    c = 10, 
-    d = 10, 
+    c = 'Hola ', 
+    d = 'Spiderman', 
     x = a + b;
 
+const saludo = c + d;
 
+// console.log(x);
+// console.warn(x);
+// console.error(x);
+// console.info(x);
 
+// console.log('a',a);
 
+// console.log('%c Mis variables', 'color:blue; font-weight: bold');
 
+// console.log({a});
 
-console.log(x);
+// console.table({a, b, c, d, x});
