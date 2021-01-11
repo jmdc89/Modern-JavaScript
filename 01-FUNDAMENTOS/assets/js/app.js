@@ -1,5 +1,8 @@
 
-// console.log('Hola Mundo');
+alert('Hola desde app.js');
+
+
+console.log('Hola Mundo');
 
 // let a = 10;
 // let b = 10;
@@ -29,3 +32,5 @@ const saludo = c + d;
 // console.log({a});
 
 // console.table({a, b, c, d, x});
+
+var miNombre = 'Fernando';
