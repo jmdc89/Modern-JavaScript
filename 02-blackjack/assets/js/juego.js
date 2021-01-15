@@ -127,3 +127,10 @@ btnPedir.addEventListener('click', () => {
     }
 
 });
+
+btnDetener.addEventListener('click', () => {
+    btnPedir.disabled   = true;
+    btnDetener.disabled = true;
+
+    turnoComputadora( puntosJugador );
+});
