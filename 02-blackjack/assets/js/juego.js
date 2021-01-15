@@ -10,6 +10,16 @@ let deck         = [];
 const tipos      = ['C','D','H','S'];
 const especiales = ['A','J','Q','K'];
 
+// Referencias del HTML
+const btnPedir   = document.querySelector('#btnPedir');
+const btnDetener = document.querySelector('#btnDetener');
+const btnNuevo   = document.querySelector('#btnNuevo');
+
+const divCartasJugador     = document.querySelector('#jugador-cartas');
+const divCartasComputadora = document.querySelector('#computadora-cartas');
+
+const puntosHTML = document.querySelectorAll('small');
+
 // Esta función crea un nuevo deck
 const crearDeck = () => {
 
