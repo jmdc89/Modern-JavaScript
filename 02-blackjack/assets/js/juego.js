@@ -78,26 +78,10 @@
             divCartasJugadores[turno].append( imgCarta );
     }
 
-    // turno de la computadora
-    const turnoComputadora = ( puntosMinimos ) => {
+    const determinarGanador = () => {
 
-        let puntosComputadora = 0;
-
-        do {
-            const carta = pedirCarta();
-            puntosComputadora = acumularPuntos(carta, puntosJugadores.length - 1 );
-            crearCarta(carta, puntosJugadores.length - 1);
-            // const imgCarta = document.createElement('img');
-            // imgCarta.src = `assets/cartas/${ carta }.png`; //3H, JD
-            // imgCarta.classList.add('carta');
-            // divCartasComputadora.append( imgCarta );
-
-            if( puntosMinimos > 21 ) {
-                break;
-            }
-
-        } while(  (puntosComputadora < puntosMinimos)  && (puntosMinimos <= 21 ) );
-
+        const [ puntosMinimos, puntosComputadora ] = puntosJugadores;
+        
         setTimeout(() => {
             if( puntosComputadora === puntosMinimos ) {
                 alert('Nadie gana :(');
@@ -109,6 +93,22 @@
                 alert('Computadora Gana')
             }
         }, 100 );
+    }
+
+
+    // turno de la computadora
+    const turnoComputadora = ( puntosMinimos ) => {
+
+        let puntosComputadora = 0;
+
+        do {
+            const carta = pedirCarta();
+            puntosComputadora = acumularPuntos(carta, puntosJugadores.length - 1 );
+            crearCarta(carta, puntosJugadores.length - 1);
+
+        } while(  (puntosComputadora < puntosMinimos)  && (puntosMinimos <= 21 ) );
+
+        determinarGanador();
     }
 
     // Eventos
