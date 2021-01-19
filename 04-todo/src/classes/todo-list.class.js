@@ -34,5 +34,7 @@ export class TodoList {
 
     deleteCompleted() {
 
+        this.todos = this.todos.filter( todo => !todo.completado )
+
     }
 }
