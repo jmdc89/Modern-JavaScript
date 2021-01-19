@@ -1,7 +1,10 @@
+import { Todo } from '../classes';
 
+import { todoList } from '../index';
 
 // Html references
 const divTodoList = document.querySelector('.todo-list');
+const txtInput = document.querySelector('.new-todo');
 
 
 export const createTodoHtml = ( todo ) => {
@@ -24,3 +27,18 @@ export const createTodoHtml = ( todo ) => {
     return div.firstElementChild;
 
 }
+
+//Events
+txtInput.addEventListener('keyup', ( event ) => {
+
+    if ( event.keyCode === 13 && txtInput.value.length > 0 ) {
+
+        console.log(txtInput.value);
+        const newTodo = new Todo( txtInput.value );
+        todoList.newTodo( newTodo );
+
+        createTodoHtml( newTodo );
+        txtInput.value = '';
+
+    }
+});
